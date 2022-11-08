@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About me
-subtitle: 
+title: About Me
+subtitle: Whoami
 ---
 Someday this will be updated....
