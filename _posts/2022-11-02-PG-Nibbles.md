@@ -2,8 +2,8 @@
 layout: post
 title: Proving Grounds - Nibbles
 subtitle: CTF Walkthrough
-cover-img: /assets/img/nibbler.png
-thumbnail-img: /assets/img/nibbler.png
+cover-img: /assets/img/nibbles/nibbler.png
+thumbnail-img: /assets/img/nibbles/nibbler.png
 tags: [ctf, 'proving grounds', 'pg']
 comments: true
 ---

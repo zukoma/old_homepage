@@ -12,14 +12,25 @@
     
     
       <item>
+        <title>Proving Grounds - Depreciated</title>
+        <description>
+          CTF Walkthrough - 
+          Depreciated is found in various OSCP prepare lists and in NetSecFocus Trophy list. Room is rated as intermediate, but is community rated this room as hard. Enumeration └─$ rustscan -a 192.168.209.170 -- -sC -sV | tee nmap PORT STATE SERVICE REASON VERSION 22/tcp open ssh syn-ack OpenSSH 8.2p1 Ubuntu 4ubuntu0.3...
+        </description>
+        <pubDate>Tue, 08 Nov 2022 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/2022-11-08-PG-Depreciated/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-11-08-PG-Depreciated/</guid>
+      </item>
+    
+      <item>
         <title>Proving Grounds - Nibbles</title>
         <description>
           CTF Walkthrough - 
           Nibbles is a intermediate rated box on Proving Grounds, which is also found in NetSec Focus trophy list and in many OSCP preparation lab lists. Nmap Scan └─$ nmap -sV -sC 192.168.157.47 Starting Nmap 7.93 ( https://nmap.org ) at 2022-11-02 10:04 EDT Nmap scan report for 192.168.157.47 Host is up...
         </description>
-        <pubDate>Fri, 11 Feb 2022 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/2022-02-11-PG-Nibbles/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022-02-11-PG-Nibbles/</guid>
+        <pubDate>Wed, 02 Nov 2022 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/2022-11-02-PG-Nibbles/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-11-02-PG-Nibbles/</guid>
       </item>
     
   </channel>
