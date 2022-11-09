@@ -9,7 +9,7 @@ author: Marius Žukovskis
 ###############################################
 
 navbar-links:
-  Blog: "blog"
+  Posts: "posts"
   About Me: "whoami"
 
 ################
