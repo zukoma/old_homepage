@@ -12,6 +12,17 @@
     
     
       <item>
+        <title>Proving Grounds - Walla</title>
+        <description>
+          CTF Walkthrough - 
+          Intermediate rated OSCP like box found on Proving Grounds. Lets check it out. Enumeration └─$ rustscan -a 192.168.209.97 -- -sC -sV | tee nmap PORT STATE SERVICE REASON VERSION 22/tcp open ssh syn-ack OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0) 23/tcp open telnet syn-ack Linux telnetd 25/tcp open smtp syn-ack Postfix...
+        </description>
+        <pubDate>Sat, 12 Nov 2022 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/2022-11-12-PG-Walla/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-11-12-PG-Walla/</guid>
+      </item>
+    
+      <item>
         <title>Proving Grounds - Depreciated</title>
         <description>
           CTF Walkthrough - 

