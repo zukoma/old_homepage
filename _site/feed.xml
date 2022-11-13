@@ -12,6 +12,17 @@
     
     
       <item>
+        <title>Proving Grounds - Meathead</title>
+        <description>
+          CTF Walkthrough - 
+          OSCP Like Windows box found in Proving Grounds. Box is rated hard by the platform and the community. Nmap Scan ─$ rustscan -a 192.168.209.70 -- -sC -sV | tee nmap Open 192.168.209.70:80 Open 192.168.209.70:135 Open 192.168.209.70:139 Open 192.168.209.70:445 Open 192.168.209.70:1221 Open 192.168.209.70:1435 Open 192.168.209.70:3389 Open 192.168.209.70:5985 [~] Starting Script(s) [&amp;gt;]...
+        </description>
+        <pubDate>Sun, 13 Nov 2022 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/2022-11-13-PG-Meathead/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-11-13-PG-Meathead/</guid>
+      </item>
+    
+      <item>
         <title>Proving Grounds - Walla</title>
         <description>
           CTF Walkthrough - 
