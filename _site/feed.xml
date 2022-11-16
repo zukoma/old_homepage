@@ -12,6 +12,17 @@
     
     
       <item>
+        <title>Proving Grounds - Twiggy</title>
+        <description>
+          CTF Walkthrough - 
+          Easy box found in Proving Grounds practice. Enumeration Checked openports with rustscan before doing an nmap scan to save few precious minutes. └─$ nmap -sV -sC 192.168.209.62 -p 22,53,80,4506,4505,8000 Starting Nmap 7.93 ( https://nmap.org ) at 2022-11-16 14:21 EST Nmap scan report for 192.168.209.62 Host is up (0.088s latency). PORT...
+        </description>
+        <pubDate>Wed, 16 Nov 2022 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/2022-11-16-PG-Twiggy/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-11-16-PG-Twiggy/</guid>
+      </item>
+    
+      <item>
         <title>Proving Grounds - Pelican</title>
         <description>
           CTF Walkthrough - 

