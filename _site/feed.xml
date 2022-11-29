@@ -12,6 +12,17 @@
     
     
       <item>
+        <title>Proving Grounds - Snookums</title>
+        <description>
+          CTF Walkthrough - 
+          Intermediate linux box found in TJNull OSCP like boxes list. Lets give it a try. Enumeration └─$ nmap -sV -sC -v 192.168.119.58 | tee nmap PORT STATE SERVICE VERSION 21/tcp open ftp vsftpd 3.0.2 | ftp-anon: Anonymous FTP login allowed (FTP code 230) |_Can&apos;t get directory listing: TIMEOUT | ftp-syst:...
+        </description>
+        <pubDate>Tue, 29 Nov 2022 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/2022-11-29-PG-Snookums/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-11-29-PG-Snookums/</guid>
+      </item>
+    
+      <item>
         <title>Proving Grounds - ZenPhoto</title>
         <description>
           CTF Walkthrough - 

