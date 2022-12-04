@@ -12,6 +12,17 @@
     
     
       <item>
+        <title>HackTheBox - Support</title>
+        <description>
+          CTF Walkthrough - 
+          Easy rated and most importantly free Windows box found in Hack The Box. Lets give it a shot! Enumeration Looks like I will be working with AD environment based on DNS, Kerberos and LDAP ports. Starting Nmap 7.93 ( https://nmap.org ) at 2022-12-04 09:28 EST Nmap scan report for support.htb...
+        </description>
+        <pubDate>Sun, 04 Dec 2022 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/2022-12-04-HTB-Support/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-12-04-HTB-Support/</guid>
+      </item>
+    
+      <item>
         <title>Proving Grounds - Snookums</title>
         <description>
           CTF Walkthrough - 
