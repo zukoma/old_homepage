@@ -12,6 +12,28 @@
     
     
       <item>
+        <title>HackTheBox - Bastard</title>
+        <description>
+          CTF Walkthrough - 
+          Medium rated OSCP like box found in HackTheBox and NetSecFocus trophy list. Machine is Windows, quire old and is retired. Enumeration Nmap scan with verbose output removed. ─$ nmap -sV -sV -T4 10.10.10.9 -v -p- | tee nmap_scan_all_ports PORT STATE SERVICE VERSION 80/tcp open http Microsoft IIS httpd 7.5 135/tcp...
+        </description>
+        <pubDate>Sun, 25 Dec 2022 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/2022-12-25-HTB-Bastard/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-12-25-HTB-Bastard/</guid>
+      </item>
+    
+      <item>
+        <title>HackTheBox - MetaTwo</title>
+        <description>
+          CTF Walkthrough - 
+          Easy box found in Hack The Box. Enumeration nmap -sV -sC 10.10.11.186 PORT STATE SERVICE REASON VERSION 21/tcp open ftp? syn-ack | fingerprint-strings: | GenericLines: | 220 ProFTPD Server (Debian) [::ffff:10.10.11.186] | Invalid command: try being more creative |_ Invalid command: try being more creative 22/tcp open ssh syn-ack OpenSSH...
+        </description>
+        <pubDate>Wed, 07 Dec 2022 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/2022-12-07-HTB-MetaTwo/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-12-07-HTB-MetaTwo/</guid>
+      </item>
+    
+      <item>
         <title>HackTheBox - Support</title>
         <description>
           CTF Walkthrough - 
